@@ -15,12 +15,12 @@ const openMenuHandler = () => {
 };
 
 function closeMenuHandler() {
-  mobileMenu.classList.replace('d-flex', 'd-none');
+  mobileMenu.classList.remove('d-flex', 'd-none');
   document.body.classList.remove('stop-scrolling');
   document.body.removeEventListener('touchmove', preventDefaultHandler);
 }
 
-menuBars.addEventListener('click', openMenuHandler);
+menuBars.addEventListener('change', openMenuHandler);
 closeMenuBtn.addEventListener('click', closeMenuHandler);
 mobileLinks.addEventListener('click', closeMenuHandler);
 
@@ -211,6 +211,6 @@ const worksActivateLinkHandler = () => {
 };
 
 window.onload = () => {
-  worksLoadHandler();
+  worksLoadHandlers();
   worksActivateLinkHandler();
 };
